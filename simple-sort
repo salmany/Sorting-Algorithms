@@ -1,0 +1,18 @@
+
+nums = [3,4,-2,55,6,4,2,0,8,7,5,33,5,6,77,4,3]
+sorted = [nums[0]]
+nums.pop(0)
+for x in nums:
+    i=0
+    while i<len(sorted):
+        if x <= sorted[i]:
+            sorted.insert(i,x)
+            i=i+1
+            break
+        if i == len(sorted)-1:
+            sorted.append(x)
+            i=i+1
+            break
+        i=i+1
+print(sorted)
+            
