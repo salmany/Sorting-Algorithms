@@ -1,0 +1,22 @@
+import random
+
+class Solution:    
+    def sortedSquares(self, nums: List[int]) -> List[int]:
+        temp = []
+        for x in nums:
+            temp.append(x*x)
+        return self.quick_sort(temp)
+
+    def quick_sort(self, array):
+        if len(array) < 2:
+            return array
+        high,low,same=[],[],[]
+        target=random.randint(0,len(array)-1)
+        for x in array:
+            if array[target] < x:
+                high.append(x)
+            elif array[target] > x:
+                low.append(x)
+            else:
+                same.append(x)
+        return self.quick_sort(low)+same+self.quick_sort(high)
