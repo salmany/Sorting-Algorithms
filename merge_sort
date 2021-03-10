@@ -1,0 +1,24 @@
+def merge_sort(array):
+    if len(array) < 2 :
+        return array
+    
+    mid = len(array) // 2
+    left, right = array[:mid], array[mid:]
+    return merge(merge_sort(left),merge_sort(right))
+    
+def merge(left, right):
+    leftindx, rightindx = 0, 0
+    merged = []
+    while len(merged) != len(left) + len(right): 
+        if leftindx==len(left):
+            merged = merged + right[rightindx::]
+            return merged
+        elif rightindx==len(right):
+            merged = merged + left[leftindx::]
+            return merged
+        elif left[leftindx] <= right[rightindx]:
+            merged.append(left[leftindx])
+            leftindx+=1
+        else:
+            merged.append(right[rightindx])
+            rightindx+=1
