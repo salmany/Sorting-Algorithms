@@ -1,0 +1,13 @@
+class Solution:
+    def sortedSquares(self, nums: List[int]) -> List[int]:
+        sorted = nums
+        for n in range(len(sorted)):
+            sorted[n] = sorted[n]*sorted[n]
+        
+        for x in range(len(sorted)):
+            for i in range(x):
+                if sorted[i] >= sorted[x]:
+                    temp=sorted[x]
+                    sorted.pop(x)
+                    sorted.insert(i,temp)
+        return sorted
