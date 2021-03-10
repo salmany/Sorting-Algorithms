@@ -1,0 +1,13 @@
+nums = [3,4,-2,55,6,4,2,0,8,7,5,33,5,6,77,4,3,-584]
+
+for x in range(len(nums)):
+    sorted=False
+    for y in range(len(nums)-x-1):
+        if nums[y] >= nums[y+1]:
+            temp = nums[y]
+            nums[y] = nums[y+1]
+            nums[y+1] = temp
+            sorted = True
+    if sorted == False:
+        break
+print(nums)
