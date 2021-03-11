@@ -1,2 +1,2 @@
-# simple_sort
-A simple list sort algorithm.
+# Sorting Algorithms
+A set of common sorting algorithms recreated by me.
